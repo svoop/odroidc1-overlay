@@ -23,7 +23,7 @@ layman-updater -R
 pico /etc/layman/layman.cfg
 |   overlays  :
 |       https://api.gentoo.org/overlays/repositories.xml
-| +     https://github.com/svoop/odroidc1-overlay/raw/master/repositories.xml
+| +     https://github.com/svoop/odroidc1-overlay/raw/main/repositories.xml
 layman -S
 layman -a odroidc1
 ```
