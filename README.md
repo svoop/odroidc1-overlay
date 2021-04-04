@@ -17,9 +17,10 @@ Usage with Layman
 -----------------
 
 ```
-emerge -av layman dev-vcs/git
-mkdir /etc/portage/repos.conf
-layman-updater -R
+mkdir -p /etc/portage/package.use
+echo "app-portage/layman sync-plugin-portage" > /etc/portage/package.use/layman
+emerge -av dev-util/git app-portage/layman
+
 pico /etc/layman/layman.cfg
 |   overlays  :
 |       https://api.gentoo.org/overlays/repositories.xml
@@ -27,3 +28,4 @@ pico /etc/layman/layman.cfg
 layman -S
 layman -a odroidc1
 ```
+
