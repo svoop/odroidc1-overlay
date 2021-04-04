@@ -1,4 +1,4 @@
-Odroid-C1 Gentoo Overlay
+ODROID C1 Gentoo Overlay
 ========================
 
 This overlay includes ebuilds for the following packages:
@@ -12,17 +12,10 @@ This overlay includes ebuilds for the following packages:
 * `x11-drivers/xf86-video-odroidc1`: Xorg DDX driver for Odroid-C1 (https://github.com/mdrjr/c1_mali_ddx)
 * `x11-libs/odroidc1-mali`: Closed source drivers for Mali (https://github.com/mdrjr/c1_mali_libs)
 
-Usage with Portage
-------------------
 
-```
-mkdir /usr/local/portage
-git clone git://github.com/tbe/odroidc1-overlay.git /usr/local/portage
-echo 'PORTDIR_OVERLAY="${PORTDIR_OVERLAY} /usr/local/portage/"' >> /etc/portage/make.conf
-```
+Usage with Layman
+-----------------
 
-Usage with Layman 2.3
----------------------
 ```
 emerge -av layman dev-vcs/git
 mkdir /etc/portage/repos.conf
@@ -33,18 +26,4 @@ pico /etc/layman/layman.cfg
 | +     https://github.com/svoop/odroidc1-overlay/raw/master/repositories.xml
 layman -S
 layman -a odroidc1
-```
-
-Usage with Paludis
-------------------
-
-```
-cat > /etc/paludis/repositories/odroidc1.conf <<__EOF__
-format = e
-location = /var/db/paludis/repositories/odroid
-sync = git://github.com/tbe/odroidc1-overlay.git
-#master_repository = gentoo
-names_cache = \${location}/.cache/names
-write_cache = /var/cache/paludis/metadata
-__EOF__
 ```
